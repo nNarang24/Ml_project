@@ -1,2 +1,91 @@
 # Ml_project
 churn prediction modelling
+Title: 
+Churn prediction using Machine Learning Techniques
+
+
+Abstract:
+The model aims to predict that whether a person will cancel their subscription based service or not. It is a critical prediction for many businesses because acquiring new clients often costs more than retaining existing ones. Once you can identify those customers that are at risk of cancelling, you should know exactly what marketing action to take for each individual customer to maximise the chances that the customer will remain
+Different customers exhibit different behaviours and preferences, so they cancel their subscriptions for various reasons. It is critical, therefore, to proactively communicate with each of them in order to retain them in your customer list. You need to know which marketing action will be the most effective for each and every customer, and when it will be most effective.
+This project proposes a machine learning based solution for churn prediction using classification such as regression analysis i.e both Logistic and Linear Regression , Random Forest. The approach involves analyzing historical customer behaviour data to train predictive model. Key features involve age of person, number of products purchased, Estimated Salary of person, Gender, Is active member or not etc.
+
+Literature Review:
+Customer churn is a common problem across businesses in many sectors. If you want to grow as a company, you have to invest in acquiring new clients. Every time a client leaves, it represents a significant investment lost. Both time and effort need to be channelled into replacing them. Being able to predict when a client is likely to leave, and offer them incentives to stay, can offer huge savings to a business. As a result, understanding what keeps customers engaged is extremely valuable knowledge, as it can help you to develop your retention strategies, and to roll out operational practices aimed at keeping customers from walking out the door .Predicting churn is a fact of life for any subscription business, and even slight fluctuations in churn can have a significant impact on your bottom line. We need to know: “Is this customer going to leave us within X months?” Yes or No? It is a binary classification task.
+ 
+What are the main challenges?
+Churn prediction modelling techniques attempt to understand the precise customer behaviours and attributes that signal the risk and timing of customers leaving. It’s not a walk-in-the-park task so I mention just four points to consider.
+1.	To succeed at retaining customers who are ready to abandon your business, Marketers & Customer Success experts must be able to predict in advance which customers are going to churn and set up a plan of marketing actions that will have the greatest retention impact on each customer. The key here is to to be proactive and engage with these customers. While simple in theory, the realities involved with achieving this “proactive retention” goal are extremely challenging.
+2.	The accuracy of the technique is critical to the success of any proactive retention efforts. If the Marketer is unaware of a customer about to churn, no action will be taken to retain that customer.
+3.	Special retention-focused offers or incentives may be provided to happy, active customers, resulting in reduced revenues for no good reason.
+4.	Your churn prediction model should rely on (almost) real-time data to quantify the risk of churning, not on static data. Although you will be able to identify a certain percentage of at-risk customers with even static data, your predictions will be inaccurate.
+ 
+Bringing it all together, predicting customer churn is important. Effective action can be taken to retain the customer before it is too late. The ability to predict that a customer is at high risk of churning while there is still time to do something about it represents a huge additional potential revenue source for every online business.
+
+Algorithm Used:
+•	Linear Regression: It is used to estimate a continuous churn risk score (0 and 1)
+•	Logistic Regression: is widely used due to its simplicity and interpretability in binary classification problems like churn
+•	Random Forest: For high accuracy and ability to handle both categorical and numerical data
+
+
+Key Features for Churn Prediction:
+•	Age
+•	Balance
+•	IsActiveMember
+•	Geography
+•	EstimatedSalary
+•	CreditScore
+•	NumOfProducts
+•	Tenure
+Dataset is taken from Kaggle for Churn Prediction Model
+
+By using Linear Regression R2 value turned out to be 0.13 which is not ideal for prediction,
+In case of Logistic Regression prediction is as follows:
+
+Accuracy: 0.6545
+Confusion Matrix:
+ [[1049  558]
+ [ 133  260]]
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.89      0.65      0.75      1607
+           1       0.32      0.66      0.43       393
+
+    accuracy                           0.65      2000
+   macro avg       0.60      0.66      0.59      2000
+weighted avg       0.78      0.65      0.69      2000
+which means that model struggles to detect chunners for class1
+
+In Case of Random Forest 
+Accuracy: 0.867
+Confusion Matrix:
+ [[1554   53]
+ [ 213  180]]
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92      1607
+           1       0.77      0.46      0.58       393
+
+    accuracy                           0.87      2000
+   macro avg       0.83      0.71      0.75      2000
+weighted avg       0.86      0.87      0.85      2000
+It achieves 87% accuracy, and significantly improved the recall for class 1 (churned customers) to 0.46, compared to earlier models.
+
+Conclusion:
+In this project, we took a deep dive into predicting customer churn using machine learning techniques on a bank dataset. After we cleaned up the data and selected the right features, we tried out several classification models, including Logistic Regression and Random Forest Classifier. The Random Forest model really stood out, achieving an impressive accuracy of 86.7% and significantly boosting the recall for customers who churned compared to the simpler models. This shows that Random Forest is quite adept at capturing the complex relationships within the data, making it a solid choice for predicting churn.
+
+Future Scope:
+1)	Include time-dependent variables like account age or recent activity trends. Using time series models or adding features like "last active date" can improve predictive power.
+2)	Introduce cost-sensitive learning to minimize financial loss. For instance, prioritize catching high-value customers likely to churn, rather than treating all churns equally.  
+3)	Combine multiple models (e.g., Random Forest, XGBoost, Logistic Regression) in an ensemble to potentially improve accuracy and robustness.
+
+References/Bibliography:
+1.	Pedregosa et al. (2011). Scikit-learn: Machine Learning in Python, Journal of Machine Learning Research, 12, 2825–2830.
+2.	Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition, O’Reilly Media.
+3.	Breiman, L. (2001). Random Forests, Machine Learning, 45(1), 5–32.
+4.	Dataset Source: Kaggle. Churn Modelling Dataset
+https://www.kaggle.com/datasets/shubhendra7/customer-churn-prediction
+5.	Scikit-learn Documentation – https://scikit-learn.org/stable/documentation.html
+
+
